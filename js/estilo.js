@@ -1,4 +1,4 @@
-debugger
+// debugger
 
 // uso del if-else
 
@@ -72,10 +72,10 @@ function calculoRealizado(cantidadNoches, precioCuarto) {
 }
 
 // uso de objetivos
-
+debugger
 class Habitaciones {
     constructor( nombreCuarto, cantidadCama, capacidad, stock, precioCuarto) {
-        this.nombreCuarto = nombreCuarto;
+        this.nombreCuarto = nombreCuarto.toUpperCase;
         this.cantidadCama = cantidadCama;
         this.capacidad = capacidad;
         this.stock = stock;
@@ -91,8 +91,14 @@ class Habitaciones {
 }
 
 const habitacion1 = new Habitaciones("Standard Doble", 1, 2, 5, 1000);
-const habitacion2 = new Habitaciones("Standard simple", 2, 2, 5, 1300);
-const habitacion3 = new Habitaciones("Standard simple", 3, 3, 4, 1350);
+const habitacion2 = new Habitaciones("Standard Doble", 1, 2, 5, 1000);
+const habitacion3 = new Habitaciones("Standard simple", 2, 2, 5, 1300);
+const habitacion4 = new Habitaciones("Standard simple", 2, 2, 5, 1300);
+const habitacion5 = new Habitaciones("Standard simple", 3, 3, 4, 1350);
+const habitacion6 = new Habitaciones("Standard simple", 3, 3, 4, 1350);
+const habitacion7 = new Habitaciones("Standard simple", 3, 3, 4, 1350);
+
+const habitaciones = [habitacion1, habitacion2, habitacion3, habitacion4, habitacion5,habitacion6, habitacion7] 
 
 // uso de array
 
@@ -114,4 +120,58 @@ function listarIntegrantes() {
     for (let integrante of Integrantes) {
         console.table(Integrantes)
     }
+}
+
+//uso de forEach
+listarHabitaciones();
+
+function listarHabitaciones() {
+    habitaciones.forEach( (habitacion)=> {
+        console.table(habitacion)
+    });
+}
+
+//uso de filter
+buscarHabitacion();
+
+function buscarHabitacion() {
+    let buscar = prompt ("ingrese la cantidad de integrantes que se van a hospedar")
+    let resultado = habitaciones.filter ((habitacion)=> habitacion.capacidad ===parseInt(buscar))
+    if (resultado !== undefined) {
+        console.clear()
+        console.table(resultado)
+    } else {
+        alert( "No tenemos una habitacion para esa cantidad de huespedes") 
+    }
+}
+
+//uso de find
+encontrarHabitacion();
+
+function encontrarHabitacion() {
+    let buscar = prompt ("ingrese el tipo de habitacion(simple o doble)").toUpperCase()
+    let resultado = habitaciones.find ((habitacion)=> habitacion.nombreCuarto(buscar))
+    if (resultado !== undefined) {
+        console.clear()
+        console.table(resultado)
+    } else {
+        alert( "No tenemos una habitacion con ese nombre") 
+    }
+}
+
+//uso de map
+incluirDesayuno();
+
+function incluirDesayuno() {
+    let habitacionConDesayuno = habitaciones.map((habitacion)=> {
+        return {
+            nombreCuarto: habitacion.nombreCuarto ,
+            cantidadCama: habitacion.cantidadCama,
+            tipoColchon: habitacion.tipoColchon,
+            capacidad: habitacion.capacidad,
+            stock: habitacion.stock,
+            precioCuarto: (habitacion.precioCuarto + 100),
+        }
+    })
+    console.table(habitacionConDesayuno)
 }
