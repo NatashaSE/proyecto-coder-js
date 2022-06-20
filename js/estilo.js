@@ -20,14 +20,14 @@ let cantidadPersonas = parseInt(prompt("Ingrese cantidad de personas que se van 
 
 switch (cantidadPersonas) {
     case 1:
-        alert("Hotel reservado para una persona")
+        alert("Hotel reservado para una persona. Total $1300 la noche")
         break;
     case 2:
         let cama = parseInt(prompt("Desea tener cama casal(1) o cama separadas(2)?"));
         if (cama == 1 ) {
-            alert("Hotel resevado para 2 personas con cama casal")
+            confirm("Hotel resevado para 2 personas con cama casal. Total $1300 la noche")
         }else if(cama == 2) {
-            alert("Hotel resevado para 2 personas con cama separadas")
+            confirm("Hotel resevado para 2 personas con cama separadas. Total $1300 la noche")
         }else {
             alert("No se ha reservado un cuarto.")
         }
@@ -35,15 +35,15 @@ switch (cantidadPersonas) {
     case 3:
         let cantidadCama = parseInt(prompt("Deseas tener una cama matrimonial y una cama(1) o tres camas separadas(2)?"));
         if (cantidadCama == 1 ) {
-            alert("Hotel resevado para 2 personas con una cama casal y una cama separada")
+            confirm("Hotel resevado para 2 personas con una cama casal y una cama separada. Total $1500 la noche")
         }else if(cama == 2) {
-            alert("Hotel resevado para 3 personas con camas separadas")
+            confirm("Hotel resevado para 3 personas con camas separadas. Total $1300 la noche")
         }else {
             alert("No se ha reservado un cuarto.")
         }
         break;
     default:
-        alert("No se puede reservar con esta cantidad de personas")
+        alert("No se puede reservar con esta cantidad de personas.")
         break;
 }
 
@@ -55,3 +55,18 @@ for (let i = 1; i <= cantidadPersonas; i++) {
     console.log("Persona numero" +i);
 }
 
+// uso de funciones
+
+let cantidadNoches = prompt("ingresar la cantidad de noches que desea quedarse:");
+let precioCuarto = 1300;
+
+calculoTotal(cantidadNoches,precioCuarto);
+
+function calculoTotal (cantidadNoches, precioCuarto) {
+    let resultado = parseInt(cantidadNoches) * parseInt(precioCuarto)
+    alert ("Total de la reserva: $"+ resultado)
+}
+
+function calculoRealizado(cantidadNoches, precioCuarto) {
+    return parseFloat(cantidadNoches) * parseFloat(precioCuarto)
+}
