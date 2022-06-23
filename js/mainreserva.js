@@ -19,16 +19,31 @@ function listarIntegrantestabla() {
     });
 }
 
+// evento focus y blur en formulario
+
+const focusCampus = ()=> {
+    const campos = document.querySelectorAll("input")
+    for (let campo of campos) {
+        if (campo.type != "submit") {
+            campo.addEventListener("focus", ()=> campo.className = "fondo-inputs")
+            campo.addEventListener("blur", ()=> campo.className = "")
+        }
+    }
+}
+
 // Creacion y agregacion de cada integrante
 
-function agregarIntegrante () {
-    let nombreIntegrante = prompt("Ingrese el nombre del integrante:")
-    let apellidoIntegrante = prompt("Ingrese el apelido del integrante:")
-    let dniIntegrante = prompt("Ingrese el DNI del integrante")
-    let edadIntegrante = prompt("Ingrese la edad del integrante")
-    integrantes.push (new Integrante( nombreIntegrante, apellidoIntegrante, dniIntegrante, edadIntegrante));
+const inputnombre = document.querySelector(`#nombreintegrante`)
+const inputapellido = document.querySelector(`#apellidointegrante`)
+const inputdni = document.querySelector(`#dniintegrante`)
+const inputedad = document.querySelector(`#edadintegrante`)
+const btnSubmit = document.querySelector(`#submit`)
+
+document.addEventListener("submit", (e)=> {
+    e.preventDefault()
+    integrantes.push (new Integrante( inputnombre.value, inputapellido.value, inputdni.value, inputedad.value));
     listarIntegrantes();
-}
+})
 
 // DOM - listar los integrantes agregados
 
