@@ -14,3 +14,8 @@ article {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%; 
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0; }
