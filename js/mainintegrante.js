@@ -1,7 +1,7 @@
+//Etapa integrantes
 const integrantes = []
 
 //Creacion de los integrantes
-
 class Integrante {
     constructor( nombreIntegrante, apellidoIntegrante, dniIntegrante, edadIntegrante) {
         this.nombreIntegrante = nombreIntegrante;
@@ -12,27 +12,13 @@ class Integrante {
 }
 
 //Tabla de todos los integrantes
-
 function listarIntegrantestabla() {
     integrantes.forEach( (integrante)=> {
         console.table(integrante)
     });
 }
 
-// evento focus y blur en formulario
-
-const focusCampus = ()=> {
-    const campos = document.querySelectorAll("input")
-    for (let campo of campos) {
-        if (campo.type != "submit") {
-            campo.addEventListener("focus", ()=> campo.className = "fondo-inputs")
-            campo.addEventListener("blur", ()=> campo.className = "")
-        }
-    }
-}
-
 // Creacion y agregacion de cada integrante
-
 const inputnombre = document.querySelector(`#nombreintegrante`)
 const inputapellido = document.querySelector(`#apellidointegrante`)
 const inputdni = document.querySelector(`#dniintegrante`)
@@ -43,10 +29,21 @@ document.addEventListener("submit", (e)=> {
     e.preventDefault()
     integrantes.push (new Integrante( inputnombre.value, inputapellido.value, inputdni.value, inputedad.value));
     listarIntegrantes();
+    guardarDatosIntegrantes();
 })
 
-// DOM - listar los integrantes agregados
+// evento focus y blur en formulario
+const focusCampus = ()=> {
+    const campos = document.querySelectorAll("input")
+    for (let campo of campos) {
+        if (campo.type != "submit") {
+            campo.addEventListener("focus", ()=> campo.className = "fondo-inputs")
+            campo.addEventListener("blur", ()=> campo.className = "")
+        }
+    }
+}
 
+// DOM - listar los integrantes agregados
 function listarIntegrantes() {
     const tablaIntegrante = document.querySelector("tbody")
           tablaIntegrante.innerHTML = ""
@@ -59,4 +56,16 @@ function listarIntegrantes() {
                           </tr>`
             tablaIntegrante.innerHTML += fila
           });
+}
+
+//guardado los datos
+function guardarDatosIntegrantes () {
+    const datosIntegrante = {
+        nombre: inputnombre.value,
+        apellido: inputapellido.value,
+        dni: inputdni.value,
+        edad:  inputedad.value
+    }
+    let string = JSON.stringify(datosIntegrante)
+    sessionStorage.setItem("datosIntegrante", string)
 }

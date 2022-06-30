@@ -9,106 +9,120 @@
     <script defer src="js/estilo.js"></script>
     <script defer src="js/mainhabitacion.js"></script>
     <script defer src="js/mainAdicionales.js"></script>
-    <script defer src="js/mainreserva.js"></script>
+    <script defer src="js/mainintegrante.js"></script>
     <title>Reservar habitacion</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">HOTEL CODER</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Habitaciones</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./reservar.html">Reservar</a>
-                  </li>
-                </ul>
-              </div>
+  <header>
+      <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">HOTEL CODER</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Habitaciones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./reservar.html">Reservar</a>
+                </li>
+              </ul>
             </div>
-          </nav>
-    </header>
-    <main>
-      <section>
-        <div>
-          <h1>Reservacion</h1>
-        </div>
-      </section>
-      <section>  <!--selecion de habitacion-->
-        <div>
-          <form action="">
-            <legend>Paso 1 -  Habitacion</legend>
-            <select class="form-select">
-              <option selected>Tipo de habitacion</option>
-              <option value="1">Standard Simple</option>
-              <option value="2">Standard Doble</option>
-            </select>
-            <input type="number" placeholder="cantidad de noches" id="cantidadNoches">
-          </form>
-        </div>
-      </section>
-      <section> <!--selecion de informacion adicional-->
-        <div>
-          <h2>Paso 2 - Adicionales</h2>
-          <p>Selecione las opciones que desea incluir a tu reserva</p>
-          <ul class="collection" id="listaAdicionales">
-            <li class="collection-item">Adicional 1</li>
-            <li class="collection-item">Adicional 2</li>
-            <li class="collection-item">Adicional 3</li>
-            <li class="collection-item">Adicional 4</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Productos seleccionados:</h2>
-        </div>
-        <div>
-          <ul class="collection" id="selecionAdicionales">
+          </div>
+        </nav>
+  </header>
+  <main>
+    <section>
+      <div>
+        <h1>Reservacion</h1>
+      </div>
+    </section>
+    <section>  <!--selecion de habitacion-->
+      <div>
+        <form action="">
+          <legend>Paso 1 -  Habitacion</legend>
+          <select class="form-select" id="selecttipoHabitacion">
+            <option></option>
+          </select>
+          <input type="number" placeholder="cantidad de noches" id="selectCandidadNoches">
+        </form>
+      </div>
+    </section>
+    <section> <!--selecion de informacion adicional-->
+      <div>
+        <legend>Paso 2 - Adicionales</legend>
+        <p>Selecione las opciones que desea incluir a tu reserva</p>
+        <ul class="collection" id="listaAdicionales">
+          <li class="collection-item">Adicional 1</li>
+          <li class="collection-item">Adicional 2</li>
+          <li class="collection-item">Adicional 3</li>
+          <li class="collection-item">Adicional 4</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Productos seleccionados:</h5>
+      </div>
+      <div>
+        <ul class="collection" id="selecionAdicionales">
+        </ul>
+      </div>
+      <!--<div id="selectadicionales"> calculo total de la selecion de adicionales
+      </div>-->
+    </section>
 
-          </ul>
-        </div>
-        <!-- <div>
-          <button type="button" class="btn btn-dark" onclick="incluirDesayuno();">incluir desayuno a la reserva</button>
-        </div> -->
-      </section>
-      <section> <!--datos de integrante-->
-        <div>
-          <form action="">
-            <legend>Paso 3 - Datos de integrantes</legend>
-            <p>Ingrese los datos de cada integrante:</p> 
-            <input type="text" placeholder="Nombre" id="nombreintegrante">
-            <input type="text" placeholder="Apellido" id="apellidointegrante">
-            <input type="number" placeholder="DNI" id="dniintegrante">
-            <input type="number" placeholder="Edad" id="edadintegrante">
-            <input type="submit" class="btn orange white-text" id="submit" value="agregar">
-          </form>
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">Dni</th>
-              <th scope="col">Edad</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-        <div>
-          <button type="button" class="btn btn-dark">siguiente</button>
-        </div>
-      </section>
-    </main>
-    <footer>
+    <section> <!--datos de integrante-->
+      <div>
+        <form action="">
+          <legend>Paso 3 - Datos de integrantes</legend>
+          <p>Ingrese los datos de cada integrante:</p> 
+          <input type="text" placeholder="Nombre" id="nombreintegrante">
+          <input type="text" placeholder="Apellido" id="apellidointegrante">
+          <input type="number" placeholder="DNI" id="dniintegrante">
+          <input type="number" placeholder="Edad" id="edadintegrante">
+          <input type="submit" class="" id="submit" value="agregar">
+        </form>
+      </div>
+    </section>
 
-    </footer>
+    <section><!--Total a pagar-->
+      <div>
+        <legend>resumen de compra:</legend>
+        <ul>
+          <li><table class="table">
+            <h5>Integrantes:</h5>
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Dni</th>
+                <th scope="col">Edad</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </li>
+        <li>
+
+        </li>
+        </ul>
+      </div>
+      <div>
+        <button id="btnCotizar">calcular</button>
+      </div>
+      <div>
+        <legend>Total de hospedaje:</legend>
+        <h3 id="valorTotal" class="right-align">$ 0.00</h3>
+      </div>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
 </body>
 </html>

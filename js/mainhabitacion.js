@@ -1,7 +1,13 @@
+//Etapa habitacion
 const habitaciones = []
 
-// uso de objetivos - producto habitaciones
+const selectHabitacion = document.querySelector(`#selecttipoHabitacion`)
+const cantidadNoches = document.querySelector(`#selectCandidadNoches`)
 
+const btnCotizar = document.querySelector(`#btnCotizar`)
+const valorTotal = document.querySelector(`#valorTotal`)
+
+//objetivos - creacion de las habitaciones
 class Habitacion {
     constructor(nombreCuarto, cantidadCama, capacidad, stock, precioCuarto) {
         this.nombreCuarto = nombreCuarto;
@@ -10,65 +16,52 @@ class Habitacion {
         this.stock = stock;
         this.precioCuarto = precioCuarto;
     }
-    precioTotal() {
-        let precioFinal = this.precioCuarto * this.cantidadNoches;
-        return precioFinal.toFixed(2);
-    };
-    descontarStock(cantidadReservadas) {
-        this.stock -= cantidadReservadas
-    }
 }
-
-// creacion de las habitaciones
 
 function  generadorAutomatico() {
-    habitaciones.push (new Habitacion("Standard Doble", 1, 2, 5, 1000))
-    habitaciones.push (new Habitacion("Standard Doble", 1, 2, 5, 1000))
-    habitaciones.push (new Habitacion("Standard simple", 2, 2, 5, 1300))
-    habitaciones.push (new Habitacion("Standard simple", 2, 2, 5, 1300))
-    habitaciones.push (new Habitacion("Standard simple", 3, 3, 4, 1350))
-    habitaciones.push (new Habitacion("Standard simple", 3, 3, 4, 1350))
-    habitaciones.push (new Habitacion("Standard simple", 3, 3, 4, 1350))
+    habitaciones.push (new Habitacion("Standard Doble - cama matrimonial", 1, 2, 5, 1000))
+    habitaciones.push (new Habitacion("Standard Doble - cama individuales", 1, 2, 5, 1000))
+    habitaciones.push (new Habitacion("Standard simple - cama matrimonial", 2, 2, 5, 1300))
+    habitaciones.push (new Habitacion("Standard simple - 2 cama individuales", 2, 2, 5, 1300))
+    habitaciones.push (new Habitacion("Standard simple - cama matrimonial y cama individual", 3, 3, 4, 1350))
+    habitaciones.push (new Habitacion("Standard simple - 2 cama matrimonial", 3, 3, 4, 1350))
+    habitaciones.push (new Habitacion("Standard simple - 3 cama individuales", 3, 3, 4, 1350))
 }
-
 generadorAutomatico()
 
-// tabla de habitaciones - forEach
-
+// tabla de habitaciones
 function listarHabitaciones() {
     habitaciones.forEach( (habitacion)=> {
         console.table(habitacion)
+        guardarHabitaciones()
     });
 }
-
 listarHabitaciones();
 
-//uso de filter para buscar habitacion por cantidad de integrantes
-
-function buscarHabitacion() {
-    let buscar = prompt ("ingrese la cantidad de integrantes que se van a hospedar")
-    let resultado = habitaciones.filter ((habitacion)=> habitacion.capacidad ===parseInt(buscar))
-    if (resultado !== undefined) {
-        console.clear()
-        console.table(resultado)
-    } else {
-        alert( "No tenemos una habitacion para esa cantidad de huespedes") 
-    }
+//guardado de habitaciones
+function guardarHabitaciones () {
+    if (habitaciones.length > 0)
+    localStorage.setItem("habitaciones", JSON.stringify(habitaciones))
 }
 
-//uso de map
+//Carga selecion de habitaciones
+const cargaHabitaciones = ()=> {
+    let optionhabitaciones
+    habitaciones.forEach(element => {
+          optionhabitaciones += `<option value="${element.precioCuarto}">${element.nombreCuarto}</option>`
+        });
+        return optionhabitaciones
+}
+selecttipoHabitacion.innerHTML = cargaHabitaciones()
 
-function incluirDesayuno() {
-    let habitacionConDesayuno = habitaciones.map((habitacion)=> {
-        return {
-            nombreCuarto: habitacion.nombreCuarto ,
-            cantidadCama: habitacion.cantidadCama,
-            tipoColchon: habitacion.tipoColchon,
-            capacidad: habitacion.capacidad,
-            stock: habitacion.stock,
-            precioCuarto: (habitacion.precioCuarto + 100),
-        }
-    })
-    console.table(habitacionConDesayuno)
-    alert("El desayuno fue incluido a tu reserva")
+//cotizacion de hospedaje
+
+//guardar datos de reserva
+function guardarDatosHospedaje() {
+    const datosHospedaje = {
+        precioHabitacion: selectHabitacion.value,
+        cantidadNoches : cantidadNoches.value,
+    }
+    let string = JSON.stringify(datosHospedaje)
+    localStorage.setItem("datosHospedaje", string)
 }
