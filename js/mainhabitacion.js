@@ -65,3 +65,33 @@ function guardarDatosHospedaje() {
     let string = JSON.stringify(datosHospedaje)
     localStorage.setItem("datosHospedaje", string)
 }
+
+//creacion de cotizacion de reserva
+class CotizadorHospedaje {
+    constructor(jsonHabitacion, jsonCantidadNoches) {
+        this.arrayHabitaciones = jsonHabitacion
+        this.arrayCantidadDeNoches = jsonCantidadNoches
+    }
+    valorHospedaje(habitacionElejidos, nochesTotales) {
+        let precioFinalHospedaje = (parseInt(habitacionElejidos) * parseInt(nochesTotales)) 
+            return precioFinalHospedaje
+    }
+}
+
+const CotizadorHabitacion = []
+const cotizador = new CotizadorHospedaje(habitaciones, cantidadNoches)
+
+//cotizacion de la hospedaje
+btnCotizar.addEventListener("click", ()=> cotizarHospedaje() )
+
+const cotizarHospedaje = ()=> {
+    debugger
+    if (cantidadNoches.value !== "") {
+        let habitacionElejidos =parseInt(selectHabitacion.value)
+        let nochesTotales = cantidadNoches.value
+        let valorDeHospedaje = cotizador.valorHospedaje(habitacionElejidos, nochesTotales)
+            valorTotal.innerText = `$ ${valorDeHospedaje.toFixed(2)}`
+        } else {
+            alert("Complete todos los datos solicitados.")
+        }
+}
