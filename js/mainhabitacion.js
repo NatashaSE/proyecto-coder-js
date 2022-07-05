@@ -40,8 +40,7 @@ listarHabitaciones();
 
 //guardado de habitaciones
 function guardarHabitaciones () {
-    if (habitaciones.length > 0)
-    localStorage.setItem("habitaciones", JSON.stringify(habitaciones))
+    habitaciones.length > 0 && localStorage.setItem("habitaciones", JSON.stringify(habitaciones))
 }
 
 //Carga selecion de habitaciones
@@ -74,7 +73,7 @@ class CotizadorHospedaje {
     }
     valorHospedaje(habitacionElejidos, nochesTotales) {
         let precioFinalHospedaje = (parseInt(habitacionElejidos) * parseInt(nochesTotales)) 
-            return precioFinalHospedaje
+            return precioFinalHospedaje || "NaN"
     }
 }
 
@@ -84,14 +83,15 @@ const cotizador = new CotizadorHospedaje(habitaciones, cantidadNoches)
 //cotizacion de la hospedaje
 btnCotizar.addEventListener("click", ()=> cotizarHospedaje() )
 
-const cotizarHospedaje = ()=> {
-    debugger
-    if (cantidadNoches.value !== "") {
-        let habitacionElejidos =parseInt(selectHabitacion.value)
-        let nochesTotales = cantidadNoches.value
-        let valorDeHospedaje = cotizador.valorHospedaje(habitacionElejidos, nochesTotales)
+const faltanDatos = ()=> {
+    return (isNaN(parseInt(cantidadNoches.value)) || selectHabitacion.value.trim() == "")
+}
+const calcularHospedaje = ()=> {
+    let habitacionElejidos =parseInt(selectHabitacion.value)
+    let nochesTotales = cantidadNoches.value
+    let valorDeHospedaje = cotizador.valorHospedaje(habitacionElejidos, nochesTotales)
             valorTotal.innerText = `$ ${valorDeHospedaje.toFixed(2)}`
-        } else {
-            alert("Complete todos los datos solicitados.")
-        }
+}
+const cotizarHospedaje = ()=> {
+    faltanDatos() ? alert("Complete todos los datos solicitados.") : calcularHospedaje()
 }

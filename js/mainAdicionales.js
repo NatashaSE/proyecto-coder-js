@@ -46,7 +46,6 @@ function agregarAdicional(ad) {
     }
 }
 
-
 function removerAdicional(adicional) {
     const adicionalRemover = document.getElementById(`${adicional}`)
           adicionalRemover.remove()

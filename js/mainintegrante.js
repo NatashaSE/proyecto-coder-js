@@ -59,6 +59,8 @@ function listarIntegrantes() {
 }
 
 //guardado los datos
+datosIntegrante = JSON.parse(localStorage.getItem("datosIntegrante")) || []
+
 function guardarDatosIntegrantes () {
     const datosIntegrante = {
         nombre: inputnombre.value,
