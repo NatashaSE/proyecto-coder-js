@@ -1,0 +1,28 @@
+@mixin Displayflex($direction, $justifycontent, $itemalign, $textalign) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifycontent;
+    align-items: $itemalign;
+    text-align: $textalign;
+}
+
+@mixin Displaygrid($columns, $justifycontent) {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: $columns;
+    justify-content: $justifycontent;
+}
+
+@mixin Text($color, $size, $style, $textalingn) {
+    color: $color;
+    font-size: $size;
+    font-style: $style;
+    text-align: $textalingn;
+}
+
+@mixin Image($width, $height) {
+    width: $width;
+    height: $height;
+    object-fit: cover;
+    display: block;
+}

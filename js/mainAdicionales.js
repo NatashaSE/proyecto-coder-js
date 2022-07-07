@@ -26,7 +26,7 @@ function cargarAdicionales() {
         const li = document.createElement("li")
               li.className = "collection-item blue-text"
               li.innerText = adicional.nombreAdicional
-              li.id = "Adicional:" + adicional.nombreAdicional
+              li.id = "ad:" + adicional.nombreAdicional
               li.addEventListener("click", ()=> { agregarAdicional(`${li.innerText}`) } )
               listaAdicionales.append(li)
     }
@@ -40,7 +40,7 @@ function agregarAdicional(ad) {
         const li = document.createElement("li")
               li.className = "collection-item"
               li.innerText = ad
-              li.id = "adicional:" + ad
+              li.id = ad
               li.addEventListener("click", ()=> { removerAdicional(`${li.id}`) }) 
               selecionAdicionales.append(li)
     }
@@ -49,5 +49,12 @@ function agregarAdicional(ad) {
 function removerAdicional(adicional) {
     const adicionalRemover = document.getElementById(`${adicional}`)
           adicionalRemover.remove()
-          console.warn(`${adicional} ha sido eliminado del carrito.`)
+          tostifyAviso(`${adicional} ha sido eliminado del carrito.`)
+}
+
+const tostifyAviso = (mensaje)=> {
+    Toastify({
+        text: mensaje,
+        duration: 3000,
+        }).showToast();
 }

@@ -93,5 +93,14 @@ const calcularHospedaje = ()=> {
             valorTotal.innerText = `$ ${valorDeHospedaje.toFixed(2)}`
 }
 const cotizarHospedaje = ()=> {
-    faltanDatos() ? alert("Complete todos los datos solicitados.") : calcularHospedaje()
+    faltanDatos() ? swalDatos("Complete todos los datos solicitados.") : calcularHospedaje()
+}
+
+const swalDatos = (mensaje)=> {
+    swal.fire ({
+        title: 'Error',
+        text: mensaje,
+        icon: 'error',
+        confirmButtonText: 'ok',
+    })
 }

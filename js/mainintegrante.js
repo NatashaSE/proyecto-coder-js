@@ -25,8 +25,10 @@ const inputdni = document.querySelector(`#dniintegrante`)
 const inputedad = document.querySelector(`#edadintegrante`)
 const btnSubmit = document.querySelector(`#submit`)
 
+
 document.addEventListener("submit", (e)=> {
     e.preventDefault()
+    faltanDatosIntegrante();
     integrantes.push (new Integrante( inputnombre.value, inputapellido.value, inputdni.value, inputedad.value));
     listarIntegrantes();
     guardarDatosIntegrantes();
@@ -70,4 +72,29 @@ function guardarDatosIntegrantes () {
     }
     let string = JSON.stringify(datosIntegrante)
     sessionStorage.setItem("datosIntegrante", string)
+}
+
+// falta de datos
+const faltanDatosIntegrante = ()=> {
+   if (isNaN(parseInt(inputdni.value)) || isNaN(parseInt(inputedad.value)) || inputnombre.value.trim() == "" || inputapellido.value.trim() == "") {
+    swalDatosFaltantes();
+   }else {
+    tostifyAvisoAgregado(`${inputnombre.value} ${inputapellido.value} agregado`);
+   }return
+}
+
+const swalDatosFaltantes = (mensaje)=> {
+    swal.fire ({
+        title: 'Error',
+        text: mensaje,
+        icon: 'error',
+        confirmButtonText: 'ok',
+    })
+}
+
+const tostifyAvisoAgregado = (mensaje)=> {
+    Toastify({
+        text: mensaje,
+        duration: 3000,
+        }).showToast();
 }
