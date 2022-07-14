@@ -95,7 +95,6 @@ const calcularHospedaje = ()=> {
 const cotizarHospedaje = ()=> {
     faltanDatos() ? swalDatos("Complete todos los datos solicitados.") : calcularHospedaje()
 }
-
 const swalDatos = (mensaje)=> {
     swal.fire ({
         title: 'Error',

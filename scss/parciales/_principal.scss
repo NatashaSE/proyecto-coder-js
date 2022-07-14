@@ -1,0 +1,8 @@
+.presentacion {
+    @include Displaygrid( repeat(2,50%), space-between);
+    margin: 1rem 0rem 1rem 1rem;
+}
+
+.card {
+    padding: 0rem;
+}

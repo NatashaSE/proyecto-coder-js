@@ -1,0 +1,58 @@
+[
+{
+    "imagen" : "../imagen/cuarto.png",
+    "nombreCuarto" : "Standard Doble",
+    "cantidadCama" : "1 cama individuales",
+    "capacidad" : 1,
+    "stock" : 5,
+    "precioCuarto" : 1000
+},
+{
+    "imagen" : "../imagen/cuarto.png",
+    "nombreCuarto" : "Standard Doble",
+    "cantidadCama" : "1 cama matrimonial",
+    "capacidad" : 1,
+    "stock" : 5,
+    "precioCuarto" : 1000
+},
+{
+    "imagen" : "../imagen/cuarto.png",
+    "nombreCuarto" : "Standard Simple",
+    "cantidadCama" : "1 cama matrimonial",
+    "capacidad" : 2,
+    "stock" : 5,
+    "precioCuarto" : 1300
+},
+{
+    "imagen" : "../imagen/cuarto.png",
+    "nombreCuarto" : "Standard Simple",
+    "cantidadCama" : "2 cama individual",
+    "capacidad" : 2,
+    "stock" : 5,
+    "precioCuarto" : 1300
+},
+{
+    "imagen" : "../imagen/cuarto.png",
+    "nombreCuarto" : "Standard Simple",
+    "cantidadCama" : "1 cama matrimonial y individual",
+    "capacidad" : 3,
+    "stock" : 3,
+    "precioCuarto" : 1550
+},
+{
+    "imagen" : "../imagen/cuarto.png",
+    "nombreCuarto" : "Standard Simple",
+    "cantidadCama" : "2 cama matrimonial",
+    "capacidad" : 3,
+    "stock" : 3,
+    "precioCuarto" : 1550
+},
+{
+    "imagen" : "../imagen/cuarto.png",
+    "nombreCuarto" : "Standard Simple",
+    "cantidadCama" : "3 cama individual",
+    "capacidad" : 3,
+    "stock" : 3,
+    "precioCuarto" : 1550
+}
+]
