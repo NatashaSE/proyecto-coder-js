@@ -1,34 +1,114 @@
 .reserva {
+    position: relative;
     margin: 1rem;
     padding: 1rem;
-}
-.reserva legend{
-    font-size: 2rem;
-    color: rgb(0, 149, 160);
+    h1 {
+        margin-bottom: 2rem;
+        @include Text(map-get($map: $color, $key: destaque), 2rem, oblique, center) ;
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+        }
+    }
+    legend {
+        font-size: 1rem;
+        color: map-get($map: $color, $key: paragrafo)
+    }
+    p {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        color: map-get($map: $color, $key: paragrafo)
+    }
+    select {
+        width: 100%;
+        border-radius: 1rem;
+    }
+    input {
+        margin-bottom: 0.5rem;
+        padding-left: 1rem;
+        width: 40%;
+        height: 2.5rem;
+        border: solid 0.1rem;
+        border-color: rgb(165, 165, 165);
+        border-radius: 1rem;
+    }
+    li {
+        margin: 0.2rem;
+        padding-left: 1.5rem;
+        @include Text(map-get($map: $color, $key: texto), 1rem, oblique, left);
+    }
+    h3{
+        margin-top: 0.5rem;
+        @include Text(map-get($map: $color, $key: texto), 1.3rem, normal, left);
+    }
+    &__integrantes {
+        input {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            width: 80%;
+            height: 2.5rem;
+            border: solid 0.1rem;
+            border-color: rgb(165, 165, 165);
+            border-radius: 1rem;
+        }
+        &--submit {
+            background-color: map-get($map: $color, $key: destaque);
+            color: white;
+            border: none;
+        }
+    }
 }
 
-.reserva legend{
-    font-size: 2rem;
-    color: rgb(0, 149, 160);
+.rounded-circle {
+    background-color: map-get($map: $color, $key: destaque);
 }
-.reserva select {
-    width: 100%;
+
+.stepper {
+    margin-left: 1rem;
+    h5 {
+        padding-left: 0.5rem;
+        font-size: 1.8rem;
+        color: map-get($map: $color, $key: destaque);
+        @media screen and (max-width: 600px) {
+            font-size: 1.3rem;
+        }
+    }
+    .line {
+      width: 2px;
+      background-color: lightgrey !important;
+    }
+    .lead {
+      font-size: 2rem;
+    }
+}
+
+.resumenCompra {
+    padding: 2rem;
+    background-color: map-get($map: $color, $key: fondo);
     border-radius: 1rem;
-}
-.reserva input {
-    margin-top: 1rem;
-    width: 50%;
-    height: 2.5rem;
-    border: solid 0.1rem;
-    border-color: rgb(165, 165, 165);
-    border-radius: 1rem;
-}
-.reserva li {
-    margin: 1rem;
-    padding-left: 1rem;
-    font-style: italic;
-}
-.reserva h5{
-    font-size: 1rem;
-    color: rgb(0, 36, 39);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    h5 {
+        @include Text(map-get($map: $color, $key: destaque), 1.8rem, oblique, center);
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+        }
+    }
+    h6 {
+        @include Text(map-get($map: $color, $key: destaque), 1.4rem, oblique, left);
+        @media screen and (max-width: 600px) {
+            font-size: 1rem;
+        }
+    } 
+    input {
+        margin: 1rem;
+        padding-left: 0rem;
+        width: 50%;
+        height: 2.5rem;
+        border: solid 0.1rem;
+        border-color: rgb(165, 165, 165);
+        border-radius: 1rem;
+        background-color: map-get($map: $color, $key: destaque);
+        color: white;
+        border: none;
+    }
 }

@@ -14,8 +14,14 @@ class Adicional {
 }
 
 function  generadorAutomatico() {
-    adicionales.push (new Adicional("Desayuno incluido", 100))
-    adicionales.push (new Adicional("Paquete de spa por persona", 500))
+    adicionales.push (new Adicional("Desayuno buffet", 100))
+    adicionales.push (new Adicional("Almuerzo buffet", 1000))
+    adicionales.push (new Adicional("Cena buffet", 1000))
+    adicionales.push (new Adicional("Masaje relajante de 30min", 500))
+    adicionales.push (new Adicional("Masaje relajante de 1h", 1000))
+    adicionales.push (new Adicional("Tratamiento facial limpieza", 400))
+    adicionales.push (new Adicional("Tratamiento facial completo", 900))
+    adicionales.push (new Adicional("Paquete masaje relajante de 30min", 500))
 }
 generadorAutomatico()
 

@@ -20,9 +20,31 @@ article {
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%; }
 
-.footer {
+/* Header */
+.navbar {
+  position: relative;
   background-color: #f8f8f8;
-  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  .navbar-collapse {
+    flex-grow: 0; }
+  .navbar-brand {
+    color: #00A699;
+    padding: 0.5rem 1rem; }
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    margin-left: 1rem; }
+
+.logo {
+  width: 5rem; }
+
+.footer {
+  position: relative;
+  background-color: #f8f8f8;
+  padding: 1rem 5rem 1rem 5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -30,8 +52,11 @@ article {
   text-align: center; }
   @media screen and (max-width: 1024px) {
     .footer {
+      padding: 1rem;
       flex-direction: column;
       justify-content: center; } }
+  .footer p {
+    color: #6d6d6d; }
 
 /* Media Querys */
 /* TABLET */
@@ -41,40 +66,200 @@ article {
   margin: 0 auto;
   grid-template-columns: repeat(2, 50%);
   justify-content: space-between;
-  margin: 1rem 0rem 1rem 1rem; }
+  background-color: #f8f8f8;
+  margin: 0rem;
+  padding: 1rem 0rem 1rem 1rem; }
+  .presentacion__texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left; }
+  .presentacion h1 {
+    margin-bottom: 2rem;
+    color: #00A699;
+    font-size: 2rem;
+    font-style: oblique;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      .presentacion h1 {
+        font-size: 1rem; } }
+  .presentacion p {
+    padding-right: 1rem;
+    color: #6d6d6d;
+    font-size: 1rem;
+    font-style: normal;
+    text-align: left; }
+    @media screen and (max-width: 600px) {
+      .presentacion p {
+        font-size: 0.5rem; } }
 
 .card {
-  padding: 0rem; }
+  margin: 1rem;
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .card h5 {
+    color: #00A699; }
+  .card p {
+    color: #6d6d6d; }
+  .card a {
+    border-color: #00A699;
+    border-radius: 1rem;
+    border-style: solid;
+    padding: 0.3rem;
+    text-decoration: none;
+    color: #00A699; }
+
+.habitaciones {
+  padding: 1rem; }
+  .habitaciones h1 {
+    margin: 1rem;
+    color: #00A699;
+    font-size: 1.5rem;
+    font-style: oblique;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      .habitaciones h1 {
+        font-size: 1rem; } }
+  .habitaciones p {
+    padding-right: 1rem;
+    color: #6d6d6d;
+    font-size: 1rem;
+    font-style: normal;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      .habitaciones p {
+        font-size: 0.5rem; } }
+  .habitaciones__opciones {
+    background-color: #f8f8f8; }
+    .habitaciones__opciones h1 {
+      padding: 1rem;
+      color: #00A699;
+      font-size: 1.5rem;
+      font-style: oblique;
+      text-align: center; }
+      @media screen and (max-width: 600px) {
+        .habitaciones__opciones h1 {
+          font-size: 1rem; } }
+    .habitaciones__opciones p {
+      padding-right: 1rem;
+      color: #6d6d6d;
+      font-size: 1rem;
+      font-style: normal;
+      text-align: center; }
+      @media screen and (max-width: 600px) {
+        .habitaciones__opciones p {
+          font-size: 0.5rem; } }
 
 .reserva {
+  position: relative;
   margin: 1rem;
   padding: 1rem; }
+  .reserva h1 {
+    margin-bottom: 2rem;
+    color: #00A699;
+    font-size: 2rem;
+    font-style: oblique;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      .reserva h1 {
+        font-size: 1.5rem; } }
+  .reserva legend {
+    font-size: 1rem;
+    color: #6d6d6d; }
+  .reserva p {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #6d6d6d; }
+  .reserva select {
+    width: 100%;
+    border-radius: 1rem; }
+  .reserva input {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    width: 40%;
+    height: 2.5rem;
+    border: solid 0.1rem;
+    border-color: #a5a5a5;
+    border-radius: 1rem; }
+  .reserva li {
+    margin: 0.2rem;
+    padding-left: 1.5rem;
+    color: #191E29;
+    font-size: 1rem;
+    font-style: oblique;
+    text-align: left; }
+  .reserva h3 {
+    margin-top: 0.5rem;
+    color: #191E29;
+    font-size: 1.3rem;
+    font-style: normal;
+    text-align: left; }
+  .reserva__integrantes input {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    width: 80%;
+    height: 2.5rem;
+    border: solid 0.1rem;
+    border-color: #a5a5a5;
+    border-radius: 1rem; }
+  .reserva__integrantes--submit {
+    background-color: #00A699;
+    color: white;
+    border: none; }
 
-.reserva legend {
-  font-size: 2rem;
-  color: #0095a0; }
+.rounded-circle {
+  background-color: #00A699; }
 
-.reserva legend {
-  font-size: 2rem;
-  color: #0095a0; }
+.stepper {
+  margin-left: 1rem; }
+  .stepper h5 {
+    padding-left: 0.5rem;
+    font-size: 1.8rem;
+    color: #00A699; }
+    @media screen and (max-width: 600px) {
+      .stepper h5 {
+        font-size: 1.3rem; } }
+  .stepper .line {
+    width: 2px;
+    background-color: lightgrey !important; }
+  .stepper .lead {
+    font-size: 2rem; }
 
-.reserva select {
-  width: 100%;
-  border-radius: 1rem; }
-
-.reserva input {
-  margin-top: 1rem;
-  width: 50%;
-  height: 2.5rem;
-  border: solid 0.1rem;
-  border-color: #a5a5a5;
-  border-radius: 1rem; }
-
-.reserva li {
-  margin: 1rem;
-  padding-left: 1rem;
-  font-style: italic; }
-
-.reserva h5 {
-  font-size: 1rem;
-  color: #002427; }
+.resumenCompra {
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  .resumenCompra h5 {
+    color: #00A699;
+    font-size: 1.8rem;
+    font-style: oblique;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      .resumenCompra h5 {
+        font-size: 1.5rem; } }
+  .resumenCompra h6 {
+    color: #00A699;
+    font-size: 1.4rem;
+    font-style: oblique;
+    text-align: left; }
+    @media screen and (max-width: 600px) {
+      .resumenCompra h6 {
+        font-size: 1rem; } }
+  .resumenCompra input {
+    margin: 1rem;
+    padding-left: 0rem;
+    width: 50%;
+    height: 2.5rem;
+    border: solid 0.1rem;
+    border-color: #a5a5a5;
+    border-radius: 1rem;
+    background-color: #00A699;
+    color: white;
+    border: none; }

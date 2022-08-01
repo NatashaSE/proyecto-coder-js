@@ -19,13 +19,19 @@ class Habitacion {
 }
 
 function  generadorAutomatico() {
-    habitaciones.push (new Habitacion("Standard Doble - cama matrimonial", 1, 2, 5, 1000))
-    habitaciones.push (new Habitacion("Standard Doble - cama individuales", 1, 2, 5, 1000))
-    habitaciones.push (new Habitacion("Standard simple - cama matrimonial", 2, 2, 5, 1300))
-    habitaciones.push (new Habitacion("Standard simple - 2 cama individuales", 2, 2, 5, 1300))
-    habitaciones.push (new Habitacion("Standard simple - cama matrimonial y cama individual", 3, 3, 4, 1350))
-    habitaciones.push (new Habitacion("Standard simple - 2 cama matrimonial", 3, 3, 4, 1350))
-    habitaciones.push (new Habitacion("Standard simple - 3 cama individuales", 3, 3, 4, 1350))
+    habitaciones.push (new Habitacion("Master - 3 camas matrimoniales", 3, 6, 5, 1800))
+    habitaciones.push (new Habitacion("Superior - cama individual", 1, 1, 5, 1300))
+    habitaciones.push (new Habitacion("Superior - cama matrimonial", 1, 2, 5, 1300))
+    habitaciones.push (new Habitacion("Superior - 2 camas individuales", 2, 2, 5, 1300))
+    habitaciones.push (new Habitacion("Superior - 2 camas matrimoniales", 2, 4, 4, 1600))
+    habitaciones.push (new Habitacion("Superior - 1 cama matrimonial y individual", 3, 3, 5, 1550))
+    habitaciones.push (new Habitacion("Superior - 3 camas individuales", 3, 3, 3, 1550))
+    habitaciones.push (new Habitacion("Inferior - cama individual", 1, 1, 5, 1300))
+    habitaciones.push (new Habitacion("Inferior - cama matrimonial", 1, 2, 5, 1200))
+    habitaciones.push (new Habitacion("Inferior - 2 camas individuales", 2, 2, 5, 1200))
+    habitaciones.push (new Habitacion("Inferior - 2 camas matrimoniales", 2, 4, 3, 1500))
+    habitaciones.push (new Habitacion("Inferior - 1 cama matrimonial y individual", 3, 3, 3, 1450))
+    habitaciones.push (new Habitacion("Inferior - 3 camas individuales", 3, 3, 3, 1450))
 }
 generadorAutomatico()
 

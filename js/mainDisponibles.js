@@ -1,6 +1,6 @@
-const contenidoDOM = document.querySelector("#contenido")
+const contenidocontenidoDisponibleDOM = document.querySelector("#contenidoDisponible")
 
-const URL = `js/habitaciones.json`
+const URL = `js/habitacionesDisponibles.json`
 
 document.addEventListener("DOMContentLoaded", ()=> {
     setTimeout(() => {
@@ -8,14 +8,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
     }, 2000);
  })
 
-const contendioHabitaciones = (contenido)=> {
-    const {imagen, nombreCuarto, cantidadCama} = contenido
+const contendioHabitaciones = (contenidoDisponible)=> {
+    const {imagen, nombreCuarto, cantidadCama} = contenidoDisponible
     return `<div class="col-4 card" style="width: 18rem;">
     <img src="${imagen}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${nombreCuarto}</h5>
       <p class="card-text">${cantidadCama}</p>
-      <a href="/reservar.html" >reservar</a>
     </div>
   </div>`
 }
@@ -31,10 +30,10 @@ const habitacionesDisponibles = (URL)=> {
     fetch(URL)
     .then((response)=> response.json())
     .then((data)=> {
-        for (contenido of data) {
-            habitacionMostrada += contendioHabitaciones(contenido)
+        for (contenidoDisponible of data) {
+            habitacionMostrada += contendioHabitaciones(contenidoDisponible)
         }
-        contenidoDOM.innerHTML = habitacionMostrada
+        contenidocontenidoDisponibleDOM.innerHTML = habitacionMostrada
     })
-    .catch((error)=> contenidoDOM.innerHTML = errorCargaHabitaciones() )
+    .catch((error)=> contenidocontenidoDisponibleDOM.innerHTML = errorCargaHabitaciones() )
 }

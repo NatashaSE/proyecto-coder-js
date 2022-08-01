@@ -1,0 +1,26 @@
+/* Header */
+
+.navbar{
+    position: relative;
+    background-color:  map-get($map: $color, $key: fondo);
+    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &-collapse {
+        flex-grow: 0;
+    }
+
+    &-brand {
+        color: map-get($map: $color, $key: destaque);
+        padding: 0.5rem 1rem;
+    }
+
+    &-nav {
+        @include Displayflex(column, center, flex-end, center);
+        margin-left: 1rem,
+    }
+
+}
+
+.logo {
+    width: 5rem;
+}

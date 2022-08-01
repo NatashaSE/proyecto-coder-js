@@ -1,9 +1,15 @@
 .footer {
+    position: relative;
     background-color: map-get($map: $color, $key: fondo);
-    padding: 1rem;
+    padding: 1rem 5rem 1rem 5rem;
     @include Displayflex(row, space-between, center, center);
     @media screen and (max-width: 1024px) {
+        padding: 1rem;
         flex-direction: column;
         justify-content: center;
+    }
+
+    p {
+        color: map-get($map: $color, $key: paragrafo);
     }
 }

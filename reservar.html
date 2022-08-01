@@ -7,218 +7,178 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js">
     </script>
+    <script src="//cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/estilos.css">
     <script defer src="js/mainhabitacion.js"></script>
     <script defer src="js/mainAdicionales.js"></script>
     <script defer src="js/mainintegrante.js"></script>
+    <script defer src="js/mainFechas.js"></script>
     <title>Reservar habitacion</title>
 </head>
 <body>
-  <header>
+  <article>
+    <header>
       <nav class="navbar navbar-expand-lg bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">HOTEL CODER</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Habitaciones</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./reservar.html">Reservar</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-  </header>
-  <main>
-    <section>
-      <section>
-        <div>
-          <h1>Reservacion</h1>
-        </div>
-      </section>
-      <!-- <section>
-        <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-3">
-            <ul class="nav nav-tabs flex-column">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html"><img src="/imagen/logo.png" alt="coha hotel" class="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+                <a class="nav-link" href="./habitaciones.html">Habitaciones</a>
               </li>
-              <li class="nav-item"> 
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
-              </li>
-              <li class="nav-item"> 
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
-              </li>
-              <li class="nav-item"> 
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
-              </li>
-              <li class="nav-item"> 
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+              <li class="nav-item">
+                <a class="nav-link" href="./reservar.html">Reservar</a>
               </li>
             </ul>
           </div>
-          <div class="col-lg-9 mt-4 mt-lg-0">
-            <div class="tab-content">
-              <div class="tab-pane show active" id="tab-1">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Architecto ut aperiam autem id</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-1.png" alt="" class="img-fluid">
-                  </div>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <section class="reserva row">
+          <div>
+            <h1>Reservacion</h1>
+          </div>
+          <div class="col-md-7"><!--etapas de reserva-->
+            <div class="stepper d-flex flex-column mt-5 ml-2">
+              <div class="d-flex mb-1"><!--selecion de habitacion-->
+                <div class="d-flex flex-column pr-4 align-items-center">
+                  <div class="circular rounded-circle py-2 px-3 text-white mb-1">1</div>
+                  <div class="line h-100"></div>
+                </div>
+                <div>
+                  <h5 class="stepper">Habitacion</h5>
+                  <section class="reserva">
+                    <div>
+                      <form action="">
+                        <legend>- Selecione el tipo de dormitorio:</legend>
+                        <select class="form-select" id="selecttipoHabitacion">
+                          <option></option>
+                        </select>
+                        <p>- Ingrese la cantidad de noches que desea hospedarse:</p>
+                        <input type="number" placeholder="  cantidad" id="selectCandidadNoches">
+                        <p>- Selecione fechas que desea hospedarse:</p>
+                        <div class="row">
+                          <input class="col-mg-6" type="date" placeholder="fechaInicial" id="fechaInicial">
+                          <input class="col-mg-6" type="date" placeholder="fechaFinal" id="fechaFinal">
+                        </div>
+                      </form>
+                    </div>
+                  </section>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-2">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Et blanditiis nemo veritatis excepturi</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2"> 
-                    <img src="assets/img/specials-2.png" alt="" class="img-fluid">
-                  </div>
+              <div class="d-flex mb-1"><!--selecion de informacion adicional-->
+                <div class="d-flex flex-column pr-4 align-items-center">
+                  <div class="rounded-circle py-2 px-3 text-white mb-1">2</div>
+                  <div class="line h-100"></div>
+                </div>
+                <div>
+                  <h5 class="stepper">Adicionales</h5>
+                  <section class="reserva">
+                    <div>
+                      <legend>- Selecione las opciones que desea incluir a tu reserva</legend>
+                      <ul class="collection" id="listaAdicionales">
+                        <li class="collection-item">Adicional 1</li>
+                        <li class="collection-item">Adicional 2</li>
+                        <li class="collection-item">Adicional 3</li>
+                        <li class="collection-item">Adicional 4</li>
+                      </ul>
+                    </div>
+                  </section>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2"> 
-                    <img src="assets/img/specials-3.png" alt="" class="img-fluid">
-                  </div>
+              <div class="d-flex mb-1"><!--datos de integrante-->
+                <div class="d-flex flex-column pr-4 align-items-center">
+                  <div class="rounded-circle py-2 px-3 text-white mb-1">3</div>
+                  <div class="line h-100 d-none"></div>
                 </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2"> 
-                    <img src="assets/img/specials-4.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-5">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2"> 
-                    <img src="assets/img/specials-5.png" alt="" class="img-fluid">
-                  </div>
+                <div>
+                  <h5 class="stepper">Datos de integrantes</h5>
+                  <section class="reserva"> <!--datos de integrante-->
+                    <div class="reserva__integrantes">
+                      <form action="">
+                        <legend>- Ingrese los datos de cada integrante:</legend> 
+                        <input type="text" placeholder="Nombre" id="nombreintegrante">
+                        <input type="text" placeholder="Apellido" id="apellidointegrante">
+                        <input type="number" placeholder="DNI" id="dniintegrante">
+                        <input type="number" placeholder="Edad" id="edadintegrante">
+                        <input type="submit" class="reserva__integrantes--submit" id="submit" value="Salvar">
+                      </form>
+                    </div>
+                  </section>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section> -->
-      <section>  <!--selecion de habitacion-->
-        <div class="reserva">
-          <form action="">
-            <legend>Paso 1 -  Habitacion</legend>
-            <select class="form-select" id="selecttipoHabitacion">
-              <option></option>
-            </select>
-            <input type="number" placeholder="cantidad de noches" id="selectCandidadNoches">
-          </form>
-        </div>
-      </section>
-      <section class="reserva"> <!--selecion de informacion adicional-->
-        <div>
-          <legend>Paso 2 - Adicionales</legend>
-          <p>Selecione las opciones que desea incluir a tu reserva</p>
-          <ul class="collection" id="listaAdicionales">
-            <li class="collection-item">Adicional 1</li>
-            <li class="collection-item">Adicional 2</li>
-            <li class="collection-item">Adicional 3</li>
-            <li class="collection-item">Adicional 4</li>
-          </ul>
-        </div>
-        <div >
-          <h5>Productos seleccionados:</h5>
-        </div>
-        <div>
-          <ul class="collection" id="selecionAdicionales">
-          </ul>
-        </div>
-        <!--<div id="selectadicionales"> calculo total de la selecion de adicionales
-        </div>-->
-      </section>
-  
-      <section class="reserva"> <!--datos de integrante-->
-        <div>
-          <form action="">
-            <legend>Paso 3 - Datos de integrantes</legend>
-            <p>Ingrese los datos de cada integrante:</p> 
-            <input type="text" placeholder="Nombre" id="nombreintegrante">
-            <input type="text" placeholder="Apellido" id="apellidointegrante">
-            <input type="number" placeholder="DNI" id="dniintegrante">
-            <input type="number" placeholder="Edad" id="edadintegrante">
-            <input type="submit" class="" id="submit" value="agregar">
-          </form>
-        </div>
-      </section>
-  
-      <section class="reserva"><!--Total a pagar-->
-        <div>
-          <legend>resumen de compra:</legend>
-          <ul>
-            <li><table class="table">
-              <h5>Integrantes:</h5>
-              <thead>
-                <tr>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Apellido</th>
-                  <th scope="col">Dni</th>
-                  <th scope="col">Edad</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </li>
-          <li>
-  
-          </li>
-          </ul>
-        </div>
-        <div>
-          <button id="btnCotizar">calcular</button>
-        </div>
-        <div>
-          <legend>Total de hospedaje:</legend>
-          <h3 id="valorTotal" class="right-align">$ 0.00</h3>
-        </div>
-      </section>
-    </section>
-    <section class="col-lg-6 d-flex flex-column justify-content-center">
-      <img src="" alt="">
-    </section>
-  </main>
-  <footer>
-
-  </footer>
+          <div class="col-md-5">
+            <div class="resumenCompra">
+              <h5 class="stepper">resumen de compra</h5>
+              <div>
+                <div class="row">
+                  <div class="col-6">
+                    <legend>Habitacion:</legend>
+                  </div>
+                  <div class="col-6">
+                    <h3 id="habitacionReserva"></h3>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <legend>Adicionales agregados:</legend>
+                  </div>
+                  <div>
+                    <ul class="collection" id="selecionAdicionales">
+                    </ul>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end mt-53"><!--Total a pagar-->
+                  <input type="submit" class="reserva__integrantes--submit" id="btnCotizar" value="calcular">
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <legend>Total de hospedaje:</legend>
+                  </div>
+                  <div class="col-6">
+                    <h3 id="valorTotal" class="right-align">$ 0.00</h3>
+                  </div>
+                </div>
+                <div>
+                  <legend>Integrantes:</legend>
+                  <ul>
+                    <li><table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Apellido</th>
+                          <th scope="col">Dni</th>
+                          <th scope="col">Edad</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </li>
+                  <li></li>
+                  </ul>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <input type="submit" class="reserva__integrantes--submit" id="" value="reservar">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+    <footer class="footer">
+      <p>@CoHa. All rights reserved.</p>
+      <img src="/imagen/logo.png" class="logo" alt="logo">
+    </footer>
+  </article>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
