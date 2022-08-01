@@ -1,6 +1,6 @@
 [
 {
-    "imagen" : "../imagen/habitacion7.png",
+    "imagen" : "./imagen/habitacion7.png",
     "nombreCuarto" : "Master",
     "cantidadCama" : "3 camas matrimoniales",
     "capacidad" : 6,
@@ -8,7 +8,7 @@
     "precioCuarto" : 1800
 },
 {
-    "imagen" : "../imagen/habitacion1.png",
+    "imagen" : "./imagen/habitacion1.png",
     "nombreCuarto" : "Doble Superior",
     "cantidadCama" : "1 cama matrimonial",
     "capacidad" : 2,
@@ -16,7 +16,7 @@
     "precioCuarto" : 1300
 },
 {
-    "imagen" : "../imagen/habitacion4.png",
+    "imagen" : "./imagen/habitacion4.png",
     "nombreCuarto" : "Doble Superior",
     "cantidadCama" : "2 camas individuales",
     "capacidad" : 2,
@@ -24,7 +24,7 @@
     "precioCuarto" : 1300
 },
 {
-    "imagen" : "../imagen/cuarto.png",
+    "imagen" : "./imagen/cuarto.png",
     "nombreCuarto" : "Triple Superior",
     "cantidadCama" : "1 cama matrimonial y individual",
     "capacidad" : 3,
@@ -32,7 +32,7 @@
     "precioCuarto" : 1550
 },
 {
-    "imagen" : "../imagen/habitacion2.png",
+    "imagen" : "./imagen/habitacion2.png",
     "nombreCuarto" : "Doble Superior",
     "cantidadCama" : "2 camas matrimoniales",
     "capacidad" : 4,
@@ -40,7 +40,7 @@
     "precioCuarto" : 1600
 },
 {
-    "imagen" : "../imagen/habitacion6.png",
+    "imagen" : "./imagen/habitacion6.png",
     "nombreCuarto" : "Triple Superior",
     "cantidadCama" : "3 camas individuales",
     "capacidad" : 3,
@@ -48,7 +48,7 @@
     "precioCuarto" : 1550
 },
 {
-    "imagen" : "../imagen/habitacion8.png",
+    "imagen" : "./imagen/habitacion8.png",
     "nombreCuarto" : "Simple inferior",
     "cantidadCama" : "1 cama individual",
     "capacidad" : 1,
@@ -56,7 +56,7 @@
     "precioCuarto" : 1300
 },
 {
-    "imagen" : "../imagen/habitacion3.png",
+    "imagen" : "./imagen/habitacion3.png",
     "nombreCuarto" : "Doble Inferior",
     "cantidadCama" : "1 cama matrimonial",
     "capacidad" : 2,
@@ -64,7 +64,7 @@
     "precioCuarto" : 1200
 },
 {
-    "imagen" : "../imagen/habitacion9.png",
+    "imagen" : "./imagen/habitacion9.png",
     "nombreCuarto" : "Doble Inferior",
     "cantidadCama" : "2 camas individuales",
     "capacidad" : 2,
@@ -72,7 +72,7 @@
     "precioCuarto" : 1200
 },
 {
-    "imagen" : "../imagen/habitacion5.png",
+    "imagen" : "./imagen/habitacion5.png",
     "nombreCuarto" : "Triple Inferior",
     "cantidadCama" : "1 cama matrimonial y individual",
     "capacidad" : 3,
@@ -80,7 +80,7 @@
     "precioCuarto" : 1450
 },
 {
-    "imagen" : "../imagen/habitacion8.png",
+    "imagen" : "./imagen/habitacion8.png",
     "nombreCuarto" : "Doble Inferior",
     "cantidadCama" : "2 camas matrimoniales",
     "capacidad" : 4,
@@ -88,7 +88,7 @@
     "precioCuarto" : 1500
 },
 {
-    "imagen" : "../imagen/habitacion6.png",
+    "imagen" : "./imagen/habitacion6.png",
     "nombreCuarto" : "Triple Inferior",
     "cantidadCama" : "3 camas individuales",
     "capacidad" : 3,

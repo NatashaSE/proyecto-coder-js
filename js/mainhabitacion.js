@@ -5,6 +5,7 @@ const selectHabitacion = document.querySelector(`#selecttipoHabitacion`)
 const cantidadNoches = document.querySelector(`#selectCandidadNoches`)
 
 const btnCotizar = document.querySelector(`#btnCotizar`)
+const btnReservar = document.querySelector(`#btnReservar`)
 const valorTotal = document.querySelector(`#valorTotal`)
 
 //objetivos - creacion de las habitaciones
@@ -59,7 +60,7 @@ const cargaHabitaciones = ()=> {
 }
 selecttipoHabitacion.innerHTML = cargaHabitaciones()
 
-//cotizacion de hospedaje
+//COTIZACION DE HOSPEDAJE
 
 //guardar datos de reserva
 function guardarDatosHospedaje() {
@@ -106,6 +107,21 @@ const swalDatos = (mensaje)=> {
         title: 'Error',
         text: mensaje,
         icon: 'error',
+        confirmButtonText: 'ok',
+    })
+}
+
+//realizacion de reserva
+btnReservar.addEventListener("click", ()=> reserva() )
+
+reserva = ()=> {
+    faltanDatos() ? swalDatos("No pudimos realizar la reserva. Complete todos los datos antes de reservar") : swalreserva()
+}
+const swalreserva = ()=> {
+    swal.fire ({
+        title: 'Reserva exitosa',
+        text: "Su reserva fue realizada exitosamente!",
+        icon: 'sucess',
         confirmButtonText: 'ok',
     })
 }

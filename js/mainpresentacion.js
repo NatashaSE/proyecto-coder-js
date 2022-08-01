@@ -1,4 +1,5 @@
 const contenidoDOM = document.querySelector("#contenido")
+const cargandoDOM = document.querySelector("#cargando")
 
 const URL = `js/habitaciones.json`
 
@@ -37,4 +38,5 @@ const habitacionesDisponibles = (URL)=> {
         contenidoDOM.innerHTML = habitacionMostrada
     })
     .catch((error)=> contenidoDOM.innerHTML = errorCargaHabitaciones() )
+    .finally(()=> cargandoDOM.innerHTML = "")
 }
